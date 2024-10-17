@@ -6,11 +6,10 @@ This repository is meant to be an agglomeration of python scripts with many diff
 As of this current commit the project contains 3 scripts, the main PythoniousMain.py script and 2 others in the cibersecurity foldier, each of these will be further explained bellow.
 
 # Layout
-
- - [PythoniousMain.py](## PythoniousMain.py)
- - [CyberSecurity](## Cybersecurity Foldier)
-    - [Hasher.py](### Hasher.py)
-    - [HashMatcher.py](### HashMatcher.py)
+- [PythoniousMain.py](#pythoniousmainpy)
+- [CyberSecurity Folder](#cybersecurity-foldier)
+  - [Hasher.py](#hasherpy)
+  - [HashMatcher.py](#hashmatcherpy)
 
 
 ## PythoniousMain.py
@@ -44,7 +43,7 @@ As of this current commit the project contains 3 scripts, the main PythoniousMai
 - Following this the user will have the option of selecting what character set to run which makes the process faster when testing the script by just selecting the `"1.Numbers"` option for exemple.
 - Finally the user will get prompted to select a number of threads to run the script with, however even thought the default is set to 4 the option of `"1. Single"` proved to be the fastest as every `brute_force` call will send multiple values to different variables to have them display the attempts in the console in real time making the use of threads not recomended for the purpose of speed but more so for proof of concept.
   
-<div>
+<div align="center">
   <img src="https://github.com/user-attachments/assets/002c0d95-5c6f-46c2-b2ee-1bd93783e2d6" alt="HashMatcherImg01" height="600"/>
   <img src="https://github.com/user-attachments/assets/11c2a591-4c03-4968-ae92-ff2fbc95a7ac" alt="HashMatcherImg02"/>
 </div>
