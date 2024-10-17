@@ -5,6 +5,7 @@ import threading
 import hashlib
 import itertools
 import os
+import bcrypt
 
 # Global variable to control the stopping of the brute force process
 stop_process = False
@@ -20,23 +21,29 @@ stats = {
     "end_time": None
 }
 
-#Calculate the hash of a given text using a specified algorithm
+# Calculate the hash of a given text using a specified algorithm
 def get_hash(text, algorithm):
     try:
-        hash_func = getattr(hashlib, algorithm)
-        hash_object = hash_func(text.encode())
-        return hash_object.hexdigest()
+        if (algorithm == "bcrypt"):
+            salt = bcrypt.gensalt()
+            hash_object = bcrypt.hashpw(text.encode(), salt)
+            return hash_object.decode()
+        else:
+            hash_func = getattr(hashlib, algorithm)
+            hash_object = hash_func(text.encode())
+            return hash_object.hexdigest()
     except AttributeError:
         return None
 
-#Detect the possible hash algorithms based on the length of the hash value
+# Detect the possible hash algorithms based on the length of the hash value
 def detect_hash_algorithm(hash_value):
     hash_length_to_algorithms = {
         32: ["md5"],
         40: ["sha1"],
         56: ["sha3_256"],
+        60: ["bcrypt"],  # bcrypt hashes are 60 characters long
         64: ["sha256", "blake2s"],
-        128: ["sha512","sha3_512", "blake2b"],
+        128: ["sha512", "sha3_512", "blake2b"],
     }
 
     hash_length = len(hash_value)
@@ -49,7 +56,7 @@ def detect_hash_algorithm(hash_value):
         print("Unable to determine the algorithm error in hash length\n")
         return None
 
-#Brute force attack to find the password that generates a given hash value
+# Brute force attack to find the password that generates a given hash value
 def brute_force(target_hash, charset, lower_range, upper_range, algorithm, thread_id, num_threads):
     global stop_process
     start_time = time.time()
@@ -148,7 +155,7 @@ def main():
             print(f"Trying all suggested algorithms: {', '.join(algo.upper() for algo in algorithms)}\n")
 
         elif choice == "3":
-            algorithms = ["md5", "sha1", "sha256", "sha512", "blake2b", "blake2s", "sha3_256", "sha3_512"]
+            algorithms = ["md5", "sha1", "sha256", "sha512", "blake2b", "blake2s", "sha3_256", "sha3_512", "bcrypt"]
             print("Trying all available algorithms.\n")
 
         elif choice == "4":
@@ -161,6 +168,7 @@ def main():
             print("6. BLAKE2s")
             print("7. SHA3-256")
             print("8. SHA3-512")
+            print("9. BCRYPT")
             algo_choice = input("Enter the number of the algorithm: ").strip()
             algorithms_dict = {
                 "1": "md5",
@@ -170,7 +178,8 @@ def main():
                 "5": "blake2b",
                 "6": "blake2s",
                 "7": "sha3_256",
-                "8": "sha3_512"
+                "8": "sha3_512",
+                "9": "bcrypt"
             }
             algorithm = algorithms_dict.get(algo_choice)
             if not algorithm:
@@ -225,7 +234,7 @@ def main():
         print("Thread Menu:")
         print("0. Default  [4]")
         print("1. Single ")
-        print("2. Med ium  [half of the cores]")
+        print("2. Medium  [half of the cores]")
         print("3. Max  [all cores - 1]")
         print("4. Custom")
 
@@ -242,7 +251,7 @@ def main():
             while True:
                 try:
                     custom_thread_count = int(input("Custom thread count: ").strip())
-                    if 0< custom_thread_count < num_cores:
+                    if 0 < custom_thread_count < num_cores:
                         thread_charsets["4"] = custom_thread_count
                         break
                     else:
