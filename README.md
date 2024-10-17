@@ -38,7 +38,7 @@ As of this current commit the project contains 3 scripts, the main PythoniousMai
 </div>
 
 ### HashMatcher.py
-- This script is meant only to be used for learning purposes and nothing else.
+- **This script is meant only to be used for learning purposes and nothing else.**
 - When executing the script it will first request a hash value that it will try to match, to generate one make use of the [Hasher.py](#hasherpy) script.
 - It will then look at the length of the hash value and sugest some algorithms that can be ran, the user can then choose to run all of the sugestions one by one, select just one or even manually select another algorithm to understand the resulting diferences between them.
 - The user will then be prompt to insert the number of characters that the plaintext string contained if no number is input it will default to 10 characters.
