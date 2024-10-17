@@ -4,3 +4,5 @@
 
 # Ignore Python compiled files
 *.pyc
+
+#.gitignore
