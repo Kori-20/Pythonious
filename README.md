@@ -16,7 +16,7 @@ As of this current commit the project contains 3 scripts, the main PythoniousMai
 ## PythoniousMain.py
 - This script acts as hub for all the scripts inside the project. All it does is run a recursive search on the foldier where it's stored with the objective of finding all .py files, it then stores them in a dictionary so they can be easily indicated and selected when running the program.
 - When running the program the user is prompted to input the number of one of the found scripts, doing so will run the script in a new console window allowing the user to have multiple scripts running side by side.
-- 
+  
 ## Cybersecurity Foldier
 **Any and all scripts found inside this foldier are strictly meant to be used for learning purposes or for ethical hacking. They were built with the purpose of furthering my knowledge of cybersecurity and letting curious minds learn as well.**
 
@@ -31,6 +31,10 @@ As of this current commit the project contains 3 scripts, the main PythoniousMai
     - SHA3-256
     - SHA3-512
 - It's main purpose is to be used in conjunction with the [HashMatcher.py](### HashMatcher.py) by generating a hash that can be used for testing.
+  
+<div align="center">
+ <img src="https://github.com/user-attachments/assets/65d78b54-ebd5-4da8-ad45-904124333ea0" alt="HasherImg" height="300"/>
+</div>
 
 ### HashMatcher.py
 - This script is meant only to be used for learning purposes and nothing else.
@@ -39,5 +43,8 @@ As of this current commit the project contains 3 scripts, the main PythoniousMai
 - The user will then be prompt to insert the number of characters that the plaintext string contained if no number is input it will default to 10 characters.
 - Following this the user will have the option of selecting what character set to run which makes the process faster when testing the script by just selecting the `"1.Numbers"` option for exemple.
 - Finally the user will get prompted to select a number of threads to run the script with, however even thought the default is set to 4 the option of `"1. Single"` proved to be the fastest as every `brute_force` call will send multiple values to different variables to have them display the attempts in the console in real time making the use of threads not recomended for the purpose of speed but more so for proof of concept.
-
-[Imgur](https://imgur.com/7xXbKw1)
+  
+<div>
+  <img src="https://github.com/user-attachments/assets/002c0d95-5c6f-46c2-b2ee-1bd93783e2d6" alt="HashMatcherImg01" height="600"/>
+  <img src="https://github.com/user-attachments/assets/11c2a591-4c03-4968-ae92-ff2fbc95a7ac" alt="HashMatcherImg02"/>
+</div>
