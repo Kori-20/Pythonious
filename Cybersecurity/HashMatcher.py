@@ -112,7 +112,7 @@ def print_brute_force_statistics(stats, total_time):
 def main():
     while True:
         global stop_process
-        print("\nHash Matcher Program\n")
+        print("Hash Matcher Program\n")
 
         # Ask for target hash
         target_hash = input("Enter the target hash value: ").strip()
