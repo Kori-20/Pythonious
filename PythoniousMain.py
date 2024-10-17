@@ -1,5 +1,7 @@
 import os
 import importlib.util
+import subprocess
+from sys import stdout
 
 ## Nit Pick Variables
 exit_string_command = "eq"
@@ -10,19 +12,14 @@ def find_scripts(base_dir):
     scripts = {}
     for root, _, files in os.walk(base_dir):
         for file in files:
-            if file.endswith(".py") and file != "" :  # Exclude the main script
-                script_name = os.path.splitext(file)[0] # Add the script to the dictionary
+            if file.endswith(".py") and file != main_script_name:  # Exclude the main script
+                script_name = os.path.splitext(file)[0]  # Add the script to the dictionary
                 scripts[script_name] = os.path.join(root, file)
     return scripts
 
-# Function to run a script dynamically
+# Function to run a script dynamically in a new console window
 def run_script(script_path):
-    spec = importlib.util.spec_from_file_location("module.name", script_path)
-    module = importlib.util.module_from_spec(spec)
-    if spec.loader is not None:
-        spec.loader.exec_module(module)
-    else:
-        print(f"Could not load module from {script_path}")
+    subprocess.Popen(['start', 'python', script_path], shell=True)
 
 # CLI to select a script
 def main():
@@ -38,14 +35,14 @@ def main():
         for i, script_name in enumerate(scripts):
             print(f"{i+1}. {script_name}")
         
-        choice = input("\nEnter the script number to run (or type "+ exit_string_command+ " to quit): ")
+        choice = input("\nEnter the script number to run (or type " + exit_string_command + " to quit): ")
         
         if choice.lower() == exit_string_command:
             break
         
         try:
             selected_script = list(scripts.values())[int(choice) - 1]
-            print(f"Running {selected_script}...")
+            print(f"Running {selected_script}...\n")
             run_script(selected_script)
         except (IndexError, ValueError):
             print("Invalid selection. Try again.")
