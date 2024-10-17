@@ -1,8 +1,2 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-
-# Ignore Visual Studio Code settings
-*.vscode/
-
-# Ignore Python compiled files
-*.pyc
