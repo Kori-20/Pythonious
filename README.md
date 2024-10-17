@@ -29,7 +29,7 @@ As of this current commit the project contains 3 scripts, the main PythoniousMai
     - BLAKE2s
     - SHA3-256
     - SHA3-512
-- It's main purpose is to be used in conjunction with the [HashMatcher.py](### HashMatcher.py) by generating a hash that can be used for testing.
+- It's main purpose is to be used in conjunction with the [HashMatcher.py](#hashmatcherpy) by generating a hash that can be used for testing.
   
 <div align="center">
  <img src="https://github.com/user-attachments/assets/65d78b54-ebd5-4da8-ad45-904124333ea0" alt="HasherImg" height="300"/>
@@ -37,7 +37,7 @@ As of this current commit the project contains 3 scripts, the main PythoniousMai
 
 ### HashMatcher.py
 - This script is meant only to be used for learning purposes and nothing else.
-- When executing the script it will first request a hash value that it will try to match, to generate one make use of the [Hasher.py](### Hasher.py) script.
+- When executing the script it will first request a hash value that it will try to match, to generate one make use of the [Hasher.py](#hasherpy) script.
 - It will then look at the length of the hash value and sugest some algorithms that can be ran, the user can then choose to run all of the sugestions one by one, select just one or even manually select another algorithm to understand the resulting diferences between them.
 - The user will then be prompt to insert the number of characters that the plaintext string contained if no number is input it will default to 10 characters.
 - Following this the user will have the option of selecting what character set to run which makes the process faster when testing the script by just selecting the `"1.Numbers"` option for exemple.
