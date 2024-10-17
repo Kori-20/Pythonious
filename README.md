@@ -1,6 +1,7 @@
 [![MIT License](https://img.shields.io/badge/License-MIT-red.svg)](https://choosealicense.com/licenses/mit/)
 [![Python](https://img.shields.io/badge/Python-3.12-blue)](https://choosealicense.com/licenses)
 ![Cyber Security](https://img.shields.io/badge/Cyber%20Security-yellow)
+![Ethical Hacking](https://img.shields.io/badge/Ethical%20Hacking-lightblue)
 
 # Pythonious
 This repository is meant to be an agglomeration of python scripts with many different uses.
