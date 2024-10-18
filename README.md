@@ -22,7 +22,7 @@ As of this current commit the project contains 3 scripts, the main PythoniousMai
 **Any and all scripts found inside this folder are strictly meant to be used for learning purposes or for ethical hacking. They were built with the purpose of furthering my knowledge of cybersecurity and letting curious minds learn as well.**
 
 ### Hasher.py
-- This simples script allows any text input to be turned into a hash by passing throught the following selection of algorithms:
+- This simple script allows any text input to be turned into a hash by passing throught the following selection of algorithms:
     - MD5
     - SHA1
     - SHA256
