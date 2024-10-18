@@ -5,21 +5,21 @@
 
 # Pythonious
 This repository is meant to be an agglomeration of python scripts with many different uses.
-As of this current commit the project contains 3 scripts, the main PythoniousMain.py script and 2 others in the cibersecurity foldier, each of these will be further explained bellow.
+As of this current commit the project contains 3 scripts, the main PythoniousMain.py script and 2 others in the cibersecurity folder, each of these will be further explained bellow.
 
 # Layout
 - [PythoniousMain.py](#pythoniousmainpy)
-- [CyberSecurity Folder](#cybersecurity-foldier)
+- [CyberSecurity Folder](#cybersecurity-folder)
   - [Hasher.py](#hasherpy)
   - [HashMatcher.py](#hashmatcherpy)
 
 
 ## PythoniousMain.py
-- This script acts as hub for all the scripts inside the project. All it does is run a recursive search on the foldier where it's stored with the objective of finding all .py files, it then stores them in a dictionary so they can be easily indicated and selected when running the program.
+- This script acts as hub for all the scripts inside the project. All it does is run a recursive search on the folder where it's stored with the objective of finding all .py files, it then stores them in a dictionary so they can be easily indicated and selected when running the program.
 - When running the program the user is prompted to input the number of one of the found scripts, doing so will run the script in a new console window allowing the user to have multiple scripts running side by side.
   
 ## Cybersecurity Folder
-**Any and all scripts found inside this foldier are strictly meant to be used for learning purposes or for ethical hacking. They were built with the purpose of furthering my knowledge of cybersecurity and letting curious minds learn as well.**
+**Any and all scripts found inside this folder are strictly meant to be used for learning purposes or for ethical hacking. They were built with the purpose of furthering my knowledge of cybersecurity and letting curious minds learn as well.**
 
 ### Hasher.py
 - This simples script allows any text input to be turned into a hash by passing throught the following selection of algorithms:
