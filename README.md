@@ -18,7 +18,7 @@ As of this current commit the project contains 3 scripts, the main PythoniousMai
 - This script acts as hub for all the scripts inside the project. All it does is run a recursive search on the foldier where it's stored with the objective of finding all .py files, it then stores them in a dictionary so they can be easily indicated and selected when running the program.
 - When running the program the user is prompted to input the number of one of the found scripts, doing so will run the script in a new console window allowing the user to have multiple scripts running side by side.
   
-## Cybersecurity Foldier
+## Cybersecurity Folder
 **Any and all scripts found inside this foldier are strictly meant to be used for learning purposes or for ethical hacking. They were built with the purpose of furthering my knowledge of cybersecurity and letting curious minds learn as well.**
 
 ### Hasher.py
