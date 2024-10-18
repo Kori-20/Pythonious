@@ -58,7 +58,7 @@ As of this current commit the project contains 3 scripts, the main PythoniousMai
     - **671.94s** or **671940 ms** or **11m 12s**
     
   - **Number of Attempts**:
-    - **10,265,234** approximately (or **15.3 attempts/ms**)
+    - **10,265,234** (or **15.3 attempts/ms**)
   
 <div align="center">
   <img src="https://github.com/user-attachments/assets/002c0d95-5c6f-46c2-b2ee-1bd93783e2d6" alt="HashMatcherImg01" height="600"/>
