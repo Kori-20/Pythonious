@@ -22,7 +22,7 @@ As of this current commit the project contains 3 scripts, the main PythoniousMai
 **Any and all scripts found inside this folder are strictly meant to be used for learning purposes or for ethical hacking. They were built with the purpose of furthering my knowledge of cybersecurity and letting curious minds learn as well.**
 
 ### Hasher.py
-- This simple script allows any text input to be turned into a hash by passing throught the following selection of algorithms:
+- This simple script turns any text input into it's matching hash value by passing it through one of the following algorithms:
     - MD5
     - SHA1
     - SHA256
@@ -31,8 +31,8 @@ As of this current commit the project contains 3 scripts, the main PythoniousMai
     - BLAKE2s
     - SHA3-256
     - SHA3-512
-- It's main purpose is to be used in conjunction with the [HashMatcher.py](#hashmatcherpy) by generating a hash that can be used for testing.
-- Bellow is an exemple of how the plaintext `"H4sh"` passed through the MD5 algorithm returns the hash value of:
+- It's main purpose is to be used in conjunction with the [HashMatcher.py](#hashmatcherpy) by generating a hash value that can be used for testing.
+- Bellow is an exemple of the result from the plaintext `"H4sh"` being passed through the MD5 algorithm returning the hash value of:
   - Hash = 469c42850914d6f323656ece681749ce
   
 <div align="center">
@@ -42,11 +42,11 @@ As of this current commit the project contains 3 scripts, the main PythoniousMai
 ### HashMatcher.py
 - **This script is meant only to be used for learning purposes and nothing else.**
 - When executing the script it will first request a hash value that it will try to match, to generate one make use of the [Hasher.py](#hasherpy) script.
-- It will then look at the length of the hash value and sugest some algorithms that can be ran, the user can then choose to run all of the sugestions one by one, select just one or even manually select another algorithm to understand the resulting diferences between them.
-- The user will then be prompt to insert the number of characters that the plaintext string contained if no number is input it will default to 10 characters.
+- It will then look at the length of the hash value and sugest the algorithms who output hash values of the same length, the user can then choose to run all of the sugestions one by one, select just one or even manually select another algorithm to understand the resulting diferences between them.
+- The user will then be prompt to insert the number of characters that the plaintext string contained, if no number is input it will default to 10 characters. If a number of characters is manullay inputted then the matcher will only experiment with plaintext of the same length as indicated, but if nothing is inputted and the `brute_force` function is ran with the default 10 characters the script will go through and test plaintext with various lengths `1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10` going through them one by one.
 - Following this the user will have the option of selecting what character set to run which makes the process faster when testing the script by just selecting the `"1.Numbers"` option for exemple.
 - Finally the user will get prompted to select a number of threads to run the script with, however even thought the default is set to 4 the option of `"1. Single"` proved to be the fastest as every `brute_force` call will send multiple values to different variables to have them display the attempts in the console in real time making the use of threads not recomended for the purpose of speed but more so for proof of concept.
-- Bellow the demonstration of how long it takes to find the correct matching hash value to the plaintext `"H4sh"` and the specs i used to test it on.
+- Bellow is the demonstration of how long it took to find the matching hash value to the plaintext `"H4sh"` while running the script on only 1 thread and the specs of my CPU used to test it:
   - **CPU**:   
     - **Current Clock Speed:** 2592 MHz
     - **Max Clock Speed:** 2592 MHz
@@ -59,9 +59,6 @@ As of this current commit the project contains 3 scripts, the main PythoniousMai
     
   - **Number of Attempts**:
     - **10,265,234** approximately (or **15.3 attempts/ms**)
-  
-
-
   
 <div align="center">
   <img src="https://github.com/user-attachments/assets/002c0d95-5c6f-46c2-b2ee-1bd93783e2d6" alt="HashMatcherImg01" height="600"/>
